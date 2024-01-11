@@ -80,10 +80,14 @@
 
       gap: 2em;
     }
-
+    
     .sub-title::after {
       content: url("assets/images/icon-plus.svg");
       display: block;
+    }
+
+    .questions .select-obj:checked ~ .sub-title::after{
+      content: url("assets/images/icon-minus.svg");
     }
 
     .questions {
@@ -116,9 +120,7 @@
       transition: max-height 0.3s ease-in;
     }
 
-    .select-obj:checked~.sub-title::after{
-      content: url("assets/images/icon-minus.svg");
-    }
+    
     /* 768px -> 635px 
       tablet
     */
@@ -186,10 +188,8 @@
 
       <div class="questions">
         <input type="radio" id="select-title1" class="select-obj" name="faq-group" checked>
-        <label for="select-title1">
-          <h3 class="sub-title">
+        <label for="select-title1" class="sub-title">
             What is Frontend Mentor, and how will it help me?
-          </h3>
         </label>
         <p class="answer">
           Frontend Mentor offers realistic coding challenges to help developers improve their
@@ -200,10 +200,8 @@
 
       <div class="questions">
         <input type="radio" id="select-title2" class="select-obj" name="faq-group">
-        <label for="select-title2">
-          <h3 class="sub-title">
+        <label for="select-title2" class="sub-title">
             Is Frontend Mentor free?
-          </h3>
         </label>
         <p class="answer">
           Yes, Frontend Mentor offers both free and premium coding challenges, with the free
@@ -213,10 +211,8 @@
 
       <div class="questions">
         <input type="radio" id="select-title3" class="select-obj" name="faq-group">
-        <label for="select-title3">
-          <h3 class="sub-title">
+        <label for="select-title3" class="sub-title">
             Can I use Frontend Mentor projects in my portfolio?
-          </h3>
         </label>
         <p class="answer">
           Yes, you can use projects completed on Frontend Mentor in your portfolio. It's an excellent
@@ -226,10 +222,8 @@
 
       <div class="questions">
         <input type="radio" id="select-title4" class="select-obj" name="faq-group">
-        <label for="select-title4">
-          <h3 class="sub-title">
+        <label for="select-title4" class="sub-title">
             How can I get help if I'm stuck on a challenge?
-          </h3>
         </label>
         <p class="answer">
           The best place to get help is inside Frontend Mentor's Discord community. There's a help
