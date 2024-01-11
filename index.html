@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+
+  <title>Frontend Mentor | FAQ accordion</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    :root {
+      --White: hsl(0, 0%, 100%);
+      --Light-pink: hsl(275, 100%, 97%);
+      --Grayish-purple: hsl(292, 16%, 49%);
+      --Dark-purple: hsl(292, 42%, 14%);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      font-family: system-ui;
+    }
+
+    main p {
+      color: var(--Grayish-purple);
+      font-weight: 400;
+    }
+
+    body {
+
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      background-color: var(--Light-pink);
+      background-image: url(assets/images/background-pattern-desktop.svg);
+      background-position: top;
+      background-repeat: no-repeat;
+      font-size: 16px;
+
+      text-wrap: balance;
+
+      height: 100vh;
+    }
+
+    .secondary-container {
+      width: min-content;
+      padding: 1em calc(2em - 0.390625vw);
+      margin: 0 auto;
+
+      background: #fff;
+      border-radius: 15px;
+
+    }
+
+    .header {
+      font-size: 1.5em;
+      display: flex;
+      align-items: baseline;
+    }
+
+    .header::before {
+      content: url("assets/images/icon-star.svg");
+    }
+
+    .title {
+      font-weight: 700;
+      padding: 0 .5em;
+    }
+
+    .sub-title {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      text-wrap: nowrap;
+
+      gap: 2em;
+    }
+
+    .sub-title::after {
+      content: url("assets/images/icon-minus.svg");
+      display: block;
+    }
+
+    .questions {
+      padding: 1.5em 0;
+    }
+
+    .questions:not(:last-child) {
+      border-bottom: 2px solid var(--Light-pink);
+    }
+    
+    .answer {
+      overflow: hidden;
+      max-height: 0;
+      transition: max-height 0.3s ease-in;
+    }
+
+    .sub-title:hover {
+      cursor: pointer;
+      color: var(--Dark-purple);
+    }
+
+    .select-obj {
+      width: 100%;
+      display: none;
+    }
+
+    .select-obj:checked~.answer {
+      max-height:20em;
+      margin: 1.5em 0;
+      transition: max-height 0.3s ease-in;
+    }
+    /* 768px -> 635px 
+      tablet
+    */
+    @media (width < 635px) {
+      .secondary-container {
+        width: fit-content;
+        margin: 1em;
+      }
+
+      .sub-title {
+        min-width: 300px;
+        text-wrap: wrap;
+      }
+    }
+    /* mobile L 450 px font */
+    @media (width < 450px){
+      p{
+        font-size: 14px;
+      }
+      .header{
+        font-size: 26px;
+      }
+      .sub-title{
+        font-size: 18px;
+      }
+    }
+    /* mobile s 380px */
+    @media (width < 380px) {
+      body{
+        background-image: url(assets/images/background-pattern-mobile.svg);
+      }
+      p{
+        font-size: 12px;
+      }
+      .header{
+        font-size: 24px;
+      }
+      .sub-title{
+        font-size: 16px;
+      }
+      .secondary-container {
+        margin: 0.2em;
+      }
+    }
+
+    .attribution {
+      font-size: 11px;
+      text-align: center;
+    }
+
+    .attribution a {
+      color: hsl(228, 45%, 44%);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="primary-container">
+    <main class="secondary-container">
+      <div class="header">
+        <h1 class="title">
+          FAQs
+        </h1>
+      </div>
+
+      <div class="questions">
+        <input type="radio" id="select-title1" class="select-obj" name="faq-group" checked>
+        <label for="select-title1">
+          <h3 class="sub-title">
+            What is Frontend Mentor, and how will it help me?
+          </h3>
+        </label>
+        <p class="answer">
+          Frontend Mentor offers realistic coding challenges to help developers improve their
+          frontend coding skills with projects in HTML, CSS, and JavaScript. It's suitable for
+          all levels and ideal for portfolio building.
+        </p>
+      </div>
+
+      <div class="questions">
+        <input type="radio" id="select-title2" class="select-obj" name="faq-group">
+        <label for="select-title2">
+          <h3 class="sub-title">
+            Is Frontend Mentor free?
+          </h3>
+        </label>
+        <p class="answer">
+          Yes, Frontend Mentor offers both free and premium coding challenges, with the free
+          option providing access to a range of projects suitable for all skill levels.
+        </p>
+      </div>
+
+      <div class="questions">
+        <input type="radio" id="select-title3" class="select-obj" name="faq-group">
+        <label for="select-title3">
+          <h3 class="sub-title">
+            Can I use Frontend Mentor projects in my portfolio?
+          </h3>
+        </label>
+        <p class="answer">
+          Yes, you can use projects completed on Frontend Mentor in your portfolio. It's an excellent
+          way to showcase your skills to potential employers!
+        </p>
+      </div>
+
+      <div class="questions">
+        <input type="radio" id="select-title4" class="select-obj" name="faq-group">
+        <label for="select-title4">
+          <h3 class="sub-title">
+            How can I get help if I'm stuck on a challenge?
+          </h3>
+        </label>
+        <p class="answer">
+          The best place to get help is inside Frontend Mentor's Discord community. There's a help
+          channel where you can ask questions and seek support from other community members.
+        </p>
+      </div>
+    </main>
+
+    <div class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+      Coded by <a href="#">NEWOLD Team</a>.
+    </div>
+  </div>
+</body>
+
+</html>
