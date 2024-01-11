@@ -82,7 +82,7 @@
     }
 
     .sub-title::after {
-      content: url("assets/images/icon-minus.svg");
+      content: url("assets/images/icon-plus.svg");
       display: block;
     }
 
@@ -114,6 +114,10 @@
       max-height:20em;
       margin: 1.5em 0;
       transition: max-height 0.3s ease-in;
+    }
+
+    .select-obj:checked~.answer::after{
+      content: url("assets/images/icon-minus.svg");
     }
     /* 768px -> 635px 
       tablet
